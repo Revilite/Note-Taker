@@ -1,39 +1,38 @@
 const express = require("express");
-const path = require("path");
-
 const app = express();
-const PORT = 3001;
+const path = require("path");
+const notes = require('./routes/notes.js');
+const fs = require("fs");
 
+
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.urlencoded({encoded : true}));
-app.use(express.static("public"));
+app.use(express.static("public"))
+
+app.use('/notes.html', notes);
 
 
-app.get("/index", (req, res) =>{
-    res.sendFile(path.join(__dirname, "public/index.html"));
-})
 
 
-app.post("/notes", (req, res) =>{
-    console.info(`${req.method} request recieved`);
 
-    const {name, note} = req.body;
-
-    if(name && note){
-        const card = {
-            name, 
-            note
-        }
-        const response = {
-            status: "success",
-            body: card,
-        }
+app.get("/api", (req, res, next) =>{
+fs.readFile("./db/db.json", "utf8", (err, data) =>{
+    if(err){
+        console.error(err);
     }
+    else{
+        const parsed = JSON.parse(data);
 
-    console.log(response);
-    
+        res.json(parsed);
+    }
+})
 })
 
-app.listen(PORT, () =>{
-    console.log(`http://localhost:${PORT}/index`);
+app.post("", (req, res, next) =>{
+    
+    next();
+})
+
+app.listen(3001, () =>{
+    console.log(`http://localhost:${3001}`);
 })
