@@ -1,14 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
         "title": "asda",
-        "text": "dasd"
-    },
-    {
-        "title": "asdas",
-        "text": "asdasd"
+        "text": "sdasd",
+        "id": 1
     }
 ]
