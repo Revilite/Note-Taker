@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "title": "Hello",
+        "text": ":)",
+        "id": "d0e9"
+    },
+    {
+        "title": "But i pretend Im a beginner",
+        "text": "Everything\nis not what it seems\nthee price we pay \nfor living our dreams\nom losing composure\ncant wait til its over \nmy mind is a boulder \nthats breaking my neck\nthe doubled-edges sword\nhas me caught in a headstorm \nbut i wont quit now\ni can rest when im dead\ncan i catch a breath\nblasphemy\nill trade my sanity\nall for some vanity\nlet it be my death\nfrom within \nlifes a glass prison\nwhere no one can sin\ncrack under pressure \nor turn into a diamond\nstuck here so long \ni dont know where my mind is \nmy creative thoughts \nhave been stuck in confinement\ngive you what you want\ni am always compliant \neverything \nthat we love\nis temporary\nplease remember me\nwhen im dead and \nim buried\nmy mind \njust wasts to be free\ni pray one day\nill be at peace\none the other side\n",
+        "id": "0ab4"
+    },
+    {
+        "title": "Shakespeare",
+        "text": "To be, or not to be--that is the question: \nWhether 'tis nobler in the mind to suffer \nThe slings and arrows of outrageous fortune\nOr to take arms against a sea of troubles\nAnd by opposing end them. To die , to sleep--\nNo more--and by a sleep to say we end \nThe heartache, and the thousand natural shocks \nthat flesh is heir to.  Tis, a consummation \nDevoutly to be wished. To die, to sleep--\nTo sleep-perchance to dream: ay, there's the rub, \nFor in that sleep of death what dreams may come \nWhen we have shuffled off this mortal coil, \nmust give us pause.",
+        "id": "0c73"
+    }
+]

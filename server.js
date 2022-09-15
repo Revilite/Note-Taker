@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path")
 const app = express();
 const api = require('./routes/api.js');
-
+const PORT  = process.env.PORT  || 3001;
 
 
 app.use(express.urlencoded({extended: true}));
@@ -25,6 +25,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(3001, () =>{
-    console.log(`http://localhost:${3001}`);
+app.listen(PORT, () =>{
+    console.log(`http://localhost:${PORT}`);
 })
