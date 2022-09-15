@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path")
 const app = express();
 const api = require('./routes/api.js');
-const fs = require("fs")
 
 
 
@@ -27,5 +26,5 @@ app.get("*", (req, res) => {
 
 
 app.listen(3001, () =>{
-    console.log(`http://localhost:${3001}/index`);
+    console.log(`http://localhost:${3001}`);
 })

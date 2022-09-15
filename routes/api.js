@@ -47,8 +47,7 @@ api.get("/notes", (req, res, next) =>{
             }
             else{
                 const parsed = JSON.parse(data);
-                console.log(req.params)
-
+                
                 for(let note of parsed){
                     if(note.id == id){
                         parsed.splice(note, 1)
