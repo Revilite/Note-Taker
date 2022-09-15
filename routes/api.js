@@ -1,7 +1,7 @@
 const express = require("express");
 const api = express.Router();
 const fs = require("fs")
-
+const uuid = require("../helpers/uuid.js");
 
 api.get("/notes", (req, res, next) =>{
     console.log("Get request called")
@@ -17,10 +17,8 @@ api.get("/notes", (req, res, next) =>{
 
     })
     
-    
-    
     api.post("/notes", (req, res, next) =>{
-
+        console.log("POST request called");
         fs.readFile("./db/db.json", "utf8", (err, data) =>{
             if(err){
                 console.error(err);
@@ -31,7 +29,7 @@ api.get("/notes", (req, res, next) =>{
                 const newNote = {
                     title, 
                     text, 
-                    id: parsed.length + 1,
+                    id: uuid(),
                 }
                 parsed.push(newNote);
     
