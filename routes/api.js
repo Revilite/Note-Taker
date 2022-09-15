@@ -12,9 +12,9 @@ api.get("/notes", (req, res, next) =>{
         else{
             const parsed = JSON.parse(data);
             res.json(parsed);
-
         }
     })
+
     })
     
     
