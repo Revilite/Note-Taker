@@ -4,6 +4,7 @@ const fs = require("fs")
 
 
 api.get("/notes", (req, res, next) =>{
+    console.log("Get request called")
     fs.readFile("./db/db.json", "utf8", (err, data) =>{
         if(err){
             console.error(err);
@@ -11,11 +12,12 @@ api.get("/notes", (req, res, next) =>{
         else{
             const parsed = JSON.parse(data);
             res.json(parsed);
+
         }
     })
     })
     
-    const notes = [];
+    
     
     api.post("/notes", (req, res, next) =>{
 
@@ -38,18 +40,23 @@ api.get("/notes", (req, res, next) =>{
         })
         next();
     })
-    
-    api.delete("/notes", (req, res, next) =>{
+
+    api.delete("/notes/:id", (req, res, next) =>{
+        const id = req.params.id;
         fs.readFile("./db/db.json", "utf8", (err, data) =>{
             if(err){
                 console.error(err);
             }
             else{
                 const parsed = JSON.parse(data);
+                console.log(req.params)
 
-                for(note of notes){
-                    
+                for(let note of parsed){
+                    if(note.id == id){
+                        parsed.splice(note, 1)
+                    }
                 }
+                fs.writeFile("./db/db.json", JSON.stringify(parsed, null, 4), (err) => err ? console.error(err) : console.log("Success"));
             }
         })
         next();
